@@ -1,6 +1,5 @@
 function required(name: string, value: string | undefined) {
   if (!value) {
-    // eslint-disable-next-line no-console
     console.warn(`[env] Missing ${name}. Did you set it in .env?`);
   }
   return value ?? "";

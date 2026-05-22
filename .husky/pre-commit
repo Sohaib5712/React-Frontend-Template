@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo "Running pre-commit checks..."
+
+# 1. Run ESLint + Prettier on staged files
+pnpm lint-staged
+
+# 2. TypeScript type check (catches type errors before build)
+echo "TypeScript type check..."
+pnpm tsc --noEmit
+if [ $? -ne 0 ]; then
+  echo "TypeScript errors found. Commit aborted."
+  exit 1
+fi
+
+echo "All checks passed."

@@ -20,7 +20,6 @@ export class ErrorBoundary extends React.Component<Props, State> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   componentDidCatch(error: any, info: any) {
     // Log to your error monitoring tool here (Sentry, Datadog, etc.)
-    // eslint-disable-next-line no-console
     console.error("Unhandled error:", error, info);
   }
 
